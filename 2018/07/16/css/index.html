@@ -6,19 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>关于我 | 朱子静的个人博客</title>
+  <title>css | 朱子静的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="我，一个集才华与美貌于一身的天才程序员。  Location: Shenzhen, China Github: @sashiburi Wechat: @zing_baby23 Email: &amp;#x31;&amp;#x38;&amp;#x31;&amp;#x32;&amp;#52;&amp;#x30;&amp;#49;&amp;#55;&amp;#48;&amp;#x35;&amp;#50;&amp;#64;&amp;#49;&amp;#x36;&amp;#x33;&amp;#46;&amp;#99;&amp;#111;&amp;#x6d">
-<meta property="og:type" content="website">
-<meta property="og:title" content="关于我">
-<meta property="og:url" content="http://yoursite.com/about/index.html">
+  <meta name="description" content="css选择器及优先级">
+<meta name="keywords" content="css">
+<meta property="og:type" content="article">
+<meta property="og:title" content="css">
+<meta property="og:url" content="http://yoursite.com/2018/07/16/css/index.html">
 <meta property="og:site_name" content="朱子静的个人博客">
-<meta property="og:description" content="我，一个集才华与美貌于一身的天才程序员。  Location: Shenzhen, China Github: @sashiburi Wechat: @zing_baby23 Email: &amp;#x31;&amp;#x38;&amp;#x31;&amp;#x32;&amp;#52;&amp;#x30;&amp;#49;&amp;#55;&amp;#48;&amp;#x35;&amp;#50;&amp;#64;&amp;#49;&amp;#x36;&amp;#x33;&amp;#46;&amp;#99;&amp;#111;&amp;#x6d">
+<meta property="og:description" content="css选择器及优先级">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-10T10:17:52.819Z">
+<meta property="og:image" content="https://i.imgur.com/ZCEk9og.png">
+<meta property="og:image" content="https://i.imgur.com/X0U33TC.png">
+<meta property="og:updated_time" content="2018-07-16T16:06:13.411Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="关于我">
-<meta name="twitter:description" content="我，一个集才华与美貌于一身的天才程序员。  Location: Shenzhen, China Github: @sashiburi Wechat: @zing_baby23 Email: &amp;#x31;&amp;#x38;&amp;#x31;&amp;#x32;&amp;#52;&amp;#x30;&amp;#49;&amp;#55;&amp;#48;&amp;#x35;&amp;#50;&amp;#64;&amp;#49;&amp;#x36;&amp;#x33;&amp;#46;&amp;#99;&amp;#111;&amp;#x6d">
+<meta name="twitter:title" content="css">
+<meta name="twitter:description" content="css选择器及优先级">
+<meta name="twitter:image" content="https://i.imgur.com/ZCEk9og.png">
   
     <link rel="alternative" href="/atom.xml" title="朱子静的个人博客" type="application/atom+xml">
   
@@ -150,33 +154,46 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="page-" class="article article-type-page " itemscope itemprop="blogPost">
+            <article id="post-css" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      关于我
+      css
     </h1>
   
 
         
-        <a href="/about/index.html" class="archive-article-date">
-  	<time datetime="2018-07-09T15:06:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-09</time>
+        <a href="/2018/07/16/css/" class="archive-article-date">
+  	<time datetime="2018-07-16T14:50:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-16</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <blockquote>
-<p>我，一个集才华与美貌于一身的天才程序员。</p>
-</blockquote>
-<p>Location: Shenzhen, China</p>
-<p>Github: <a href="https://github.com/sashiburi" target="_blank" rel="noopener">@sashiburi</a></p>
-<p>Wechat: <a href="https://qr.api.cli.im/qr?data=zing_baby23&amp;level=H&amp;transparent=false&amp;bgcolor=%23ffffff&amp;forecolor=%23000000&amp;blockpixel=12&amp;marginblock=1&amp;logourl=&amp;size=280&amp;kid=cliim&amp;key=5d4bf5c60c041df6a477375fa5847de4" target="_blank" rel="noopener">@zing_baby23</a></p>
-<p>Email: <a href="mailto:&#x31;&#x38;&#x31;&#x32;&#52;&#x30;&#49;&#55;&#48;&#x35;&#50;&#64;&#49;&#x36;&#x33;&#46;&#99;&#111;&#x6d;" target="_blank" rel="noopener">&#x31;&#x38;&#x31;&#x32;&#52;&#x30;&#49;&#55;&#48;&#x35;&#50;&#64;&#49;&#x36;&#x33;&#46;&#99;&#111;&#x6d;</a></p>
+        <h3 id="css选择器及优先级"><a href="#css选择器及优先级" class="headerlink" title="css选择器及优先级"></a>css选择器及优先级</h3><a id="more"></a>
+<p>一般来说，选择器的优先级（从上往下依次降低）是：</p>
+<pre><code>1. 在属性后面使用 !important 会覆盖页面内任何位置定义的元素样式。
+
+2. 作为style属性写在元素内的样式
+
+3. id选择器
+
+4. 类选择器
+
+5. 标签选择器
+
+6. 通配符选择器
+</code></pre><p>那么究竟是class选择器优先级高，还是伪类选择器优先级高呢？来段代码效果，一目了然：</p>
+<p>效果：</p>
+<p><img src="https://i.imgur.com/ZCEk9og.png" alt=""></p>
+<p>注意一样的样式代码，前后顺序不同，导致的效果变化：</p>
+<p>效果：</p>
+<p><img src="https://i.imgur.com/X0U33TC.png" alt=""></p>
+<p>也就是说：<strong>伪类选择器和类选择器的优先级是一样的，谁在后面谁起作用，因为我们知道后面的样式会覆盖前面的样式</strong></p>
 
       
 
@@ -185,6 +202,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">css</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -235,7 +263,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/about/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/07/16/css/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -247,6 +275,16 @@
 </article>
 
   
+<nav id="article-nav">
+  
+  
+    <a href="/2018/07/16/html基础标签/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">html初级</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -297,7 +335,7 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
