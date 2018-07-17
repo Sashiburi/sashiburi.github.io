@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>JavaScript | 朱子静的个人博客</title>
+  <title>HTML学习 | 朱子静的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="JavaSrcipt语言核心数据类型原始值： String Number Boolean Null Undefined 引用值 Array Function Object …… Date RegExp">
-<meta name="keywords" content="JavaScript">
+  <meta name="description" content="HTML简介什么是HTML?HTML 是用来描述网页的一种语言">
+<meta name="keywords" content="html">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JavaScript">
-<meta property="og:url" content="http://yoursite.com/2018/07/10/JavaScript/index.html">
+<meta property="og:title" content="HTML学习">
+<meta property="og:url" content="http://yoursite.com/2018/07/12/HTML/index.html">
 <meta property="og:site_name" content="朱子静的个人博客">
-<meta property="og:description" content="JavaSrcipt语言核心数据类型原始值： String Number Boolean Null Undefined 引用值 Array Function Object …… Date RegExp">
+<meta property="og:description" content="HTML简介什么是HTML?HTML 是用来描述网页的一种语言">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-07-16T06:51:46.292Z">
+<meta property="og:updated_time" content="2018-07-12T11:16:28.631Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JavaScript">
-<meta name="twitter:description" content="JavaSrcipt语言核心数据类型原始值： String Number Boolean Null Undefined 引用值 Array Function Object …… Date RegExp">
+<meta name="twitter:title" content="HTML学习">
+<meta name="twitter:description" content="HTML简介什么是HTML?HTML 是用来描述网页的一种语言">
   
     <link rel="alternative" href="/atom.xml" title="朱子静的个人博客" type="application/atom+xml">
   
@@ -151,30 +151,166 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-JavaScript" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-HTML" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      JavaScript
+      HTML学习
     </h1>
   
 
         
-        <a href="/2018/07/10/JavaScript/" class="archive-article-date">
-  	<time datetime="2018-07-10T14:03:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-10</time>
+        <a href="/2018/07/12/HTML/" class="archive-article-date">
+  	<time datetime="2018-07-12T04:37:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-12</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="JavaSrcipt语言核心"><a href="#JavaSrcipt语言核心" class="headerlink" title="JavaSrcipt语言核心"></a>JavaSrcipt语言核心</h2><h3 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h3><p><strong>原始值：</strong></p>
-<p>String Number Boolean Null Undefined</p>
-<p><strong>引用值</strong></p>
-<p>Array Function Object …… Date RegExp</p>
+        <h2 id="HTML简介"><a href="#HTML简介" class="headerlink" title="HTML简介"></a>HTML简介</h2><h3 id="什么是HTML"><a href="#什么是HTML" class="headerlink" title="什么是HTML?"></a>什么是HTML?</h3><p>HTML 是用来描述网页的一种语言</p>
+<a id="more"></a>
+<ul>
+<li>HTML 指的是超文本标记语言 (Hyper Text Markup Language)</li>
+<li>HTML 不是一种编程语言，而是一种标记语言 (markup language)</li>
+<li>标记语言是一套标记标签 (markup tag)</li>
+<li>HTML 使用标记标签来描述网页</li>
+</ul>
+<h3 id="HTML-标签"><a href="#HTML-标签" class="headerlink" title="HTML 标签"></a>HTML 标签</h3><p>HTML 标记标签通常被称为 HTML 标签 (HTML tag)。</p>
+<ul>
+<li>HTML 标签是由尖括号包围的关键词，比如 <code>&lt;html&gt;</code></li>
+<li>HTML 标签通常是成对出现的，比如 <code>&lt;b&gt;</code> 和 <code>&lt;/b&gt;</code></li>
+<li>标签对中的第一个标签是开始标签，第二个标签是结束标签</li>
+<li>开始和结束标签也被称为开放标签和闭合标签</li>
+</ul>
+<h3 id="HTML-文档-网页"><a href="#HTML-文档-网页" class="headerlink" title="HTML 文档 = 网页"></a>HTML 文档 = 网页</h3><ul>
+<li>HTML 文档描述网页</li>
+<li>HTML 文档包含 HTML 标签和纯文本</li>
+<li>HTML 文档也被称为网页</li>
+</ul>
+<p>Web 浏览器的作用是读取 HTML 文档，并以网页的形式显示出它们。浏览器不会显示 HTML 标签，而是使用标签来解释页面的内容：</p>
+<pre><code>&lt;html&gt;
+&lt;body&gt;
+
+&lt;h1&gt;我的第一个标题&lt;/h1&gt;
+
+&lt;p&gt;我的第一个段落。&lt;/p&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><h2 id="基本的-HTML-标签-四个实例"><a href="#基本的-HTML-标签-四个实例" class="headerlink" title="基本的 HTML 标签 - 四个实例"></a>基本的 HTML 标签 - 四个实例</h2><h3 id="HTML-标题"><a href="#HTML-标题" class="headerlink" title="HTML 标题"></a>HTML 标题</h3><p>HTML 标题（Heading）是通过 <code>&lt;h1&gt; - &lt;h6&gt;</code> 等标签进行定义的。</p>
+<p><strong>实例</strong></p>
+<pre><code>&lt;h1&gt;This is a heading&lt;/h1&gt;
+&lt;h2&gt;This is a heading&lt;/h2&gt;
+&lt;h3&gt;This is a heading&lt;/h3&gt;
+</code></pre><h3 id="HTML-段落"><a href="#HTML-段落" class="headerlink" title="HTML 段落"></a>HTML 段落</h3><p>HTML 段落是通过 <code>&lt;p&gt;</code> 标签进行定义的。</p>
+<p><strong>实例</strong></p>
+<pre><code>&lt;p&gt;This is a paragraph.&lt;/p&gt;
+&lt;p&gt;This is another paragraph.&lt;/p&gt;
+</code></pre><h3 id="HTML-链接"><a href="#HTML-链接" class="headerlink" title="HTML 链接"></a>HTML 链接</h3><p>HTML 链接是通过 <code>&lt;a&gt;</code> 标签进行定义的。</p>
+<p><strong>实例</strong></p>
+<pre><code>&lt;a href=&quot;http://www.w3school.com.cn&quot;&gt;This is a link&lt;/a&gt;
+</code></pre><h3 id="HTML-图像"><a href="#HTML-图像" class="headerlink" title="HTML 图像"></a>HTML 图像</h3><p>HTML 图像是通过 <code>&lt;img&gt;</code> 标签进行定义的。</p>
+<pre><code>&lt;img src=&quot;w3school.jpg&quot; width=&quot;104&quot; height=&quot;142&quot; /&gt;
+</code></pre><h2 id="HTML-元素"><a href="#HTML-元素" class="headerlink" title="HTML 元素"></a>HTML 元素</h2><p>HTML 元素指的是从开始标签（start tag）到结束标签（end tag）的所有代码。</p>
+<h3 id="HTML-元素语法"><a href="#HTML-元素语法" class="headerlink" title="HTML 元素语法"></a>HTML 元素语法</h3><ul>
+<li>HTML 元素以开始标签起始</li>
+<li>HTML 元素以结束标签终止</li>
+<li>元素的内容是开始标签与结束标签之间的内容</li>
+<li>某些 HTML 元素具有空内容（empty content）</li>
+<li>空元素在开始标签中进行关闭（以开始标签的结束而结束）</li>
+<li>大多数 HTML 元素可拥有属性</li>
+</ul>
+<h3 id="嵌套的-HTML-元素"><a href="#嵌套的-HTML-元素" class="headerlink" title="嵌套的 HTML 元素"></a>嵌套的 HTML 元素</h3><p>大多数 HTML 元素可以嵌套（可以包含其他 HTML 元素）。</p>
+<p>HTML 文档由嵌套的 HTML 元素构成。</p>
+<p><strong>HTML 文档实例</strong></p>
+<pre><code>&lt;html&gt;
+
+&lt;body&gt;
+&lt;p&gt;This is my first paragraph.&lt;/p&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+</code></pre><p>上面的例子包含三个 HTML 元素。</p>
+<h3 id="HTML-实例解释"><a href="#HTML-实例解释" class="headerlink" title="HTML 实例解释"></a>HTML 实例解释</h3><p><strong><code>&lt;p&gt;</code> 元素：</strong></p>
+<pre><code>&lt;p&gt;This is my first paragraph.&lt;/p&gt;
+</code></pre><p>这个 <code>&lt;p&gt;</code> 元素定义了 HTML 文档中的一个段落。</p>
+<p>这个元素拥有一个开始标签 <code>&lt;p&gt;</code>，以及一个结束标签 <code>&lt;/p&gt;</code>。</p>
+<p>元素内容是：This is my first paragraph。</p>
+<p><strong><code>&lt;body&gt;</code> 元素：</strong></p>
+<pre><code>&lt;body&gt;
+&lt;p&gt;This is my first paragraph.&lt;/p&gt;
+&lt;/body&gt;
+</code></pre><p><code>&lt;body&gt;</code> 元素定义了 HTML 文档的主体。</p>
+<p>这个元素拥有一个开始标签 <code>&lt;body&gt;</code>，以及一个结束标签 <code>&lt;/body&gt;</code>。</p>
+<p>元素内容是另一个 HTML 元素（p 元素）。</p>
+<p><strong><code>&lt;html&gt;</code> 元素：</strong></p>
+<pre><code>&lt;html&gt;
+
+&lt;body&gt;
+&lt;p&gt;This is my first paragraph.&lt;/p&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+</code></pre><p><code>&lt;html&gt;</code> 元素定义了整个 HTML 文档。</p>
+<p>这个元素拥有一个开始标签 <code>&lt;html&gt;</code>，以及一个结束标签 <code>&lt;/html&gt;</code>。</p>
+<p>元素内容是另一个 HTML 元素（body 元素）。</p>
+<p><strong>不要忘记结束标签</strong></p>
+<p>即使您忘记了使用结束标签，大多数浏览器也会正确地显示 HTML：</p>
+<pre><code>&lt;p&gt;This is a paragraph
+&lt;p&gt;This is a paragraph
+</code></pre><p>上面的例子在大多数浏览器中都没问题，但不要依赖这种做法。忘记使用结束标签会产生不可预料的结果或错误。</p>
+<h3 id="空的-HTML-元素"><a href="#空的-HTML-元素" class="headerlink" title="空的 HTML 元素"></a>空的 HTML 元素</h3><p>没有内容的 HTML 元素被称为空元素。空元素是在开始标签中关闭的。</p>
+<p><code>&lt;br&gt;</code> 就是没有关闭标签的空元素（<code>&lt;br&gt;</code> 标签定义换行）。</p>
+<p>在 XHTML、XML 以及未来版本的 HTML 中，所有元素都必须被关闭。</p>
+<p>在开始标签中添加斜杠，比如 <code>&lt;br /&gt;</code>，是关闭空元素的正确方法，HTML、XHTML 和 XML 都接受这种方式。</p>
+<p>即使 <br> 在所有浏览器中都是有效的，但使用 <code>&lt;br /&gt;</code> 其实是更长远的保障。</p>
+<p><strong>HTML 提示：使用小写标签</strong></p>
+<p>HTML 标签对大小写不敏感：<code>&lt;P&gt;</code> 等同于 <code>&lt;p&gt;</code>。许多网站都使用大写的 HTML 标签。</p>
+<h2 id="HTML-属性"><a href="#HTML-属性" class="headerlink" title="HTML 属性"></a>HTML 属性</h2><p><strong>属性为 HTML 元素提供附加信息。</strong></p>
+<p>HTML 标签可以拥有<strong>属性</strong>。属性提供了有关 HTML 元素的<strong>更多的信息</strong>。</p>
+<p>属性总是以<strong>名称/值对</strong>的形式出现，比如：<strong>name=”value”</strong>。</p>
+<p>属性总是在 HTML 元素的<strong>开始标签</strong>中规定。</p>
+<h3 id="属性实例"><a href="#属性实例" class="headerlink" title="属性实例"></a>属性实例</h3><p>HTML 链接由 <code>&lt;a&gt;</code>标签定义。链接的地址在 href 属性中指定：</p>
+<pre><code>&lt;a href=&quot;http://www.w3school.com.cn&quot;&gt;This is a link&lt;/a&gt;
+</code></pre><p><strong>HTML 提示：使用小写属性</strong></p>
+<p>属性值应该始终被包括在引号内。双引号是最常用的，不过使用单引号也没有问题。</p>
+<p>在某些个别的情况下，比如属性值本身就含有双引号，那么您必须使用单引号，例如：</p>
+<pre><code>name=&apos;Bill &quot;HelloWorld&quot; Gates&apos;
+</code></pre><p><strong>HTML 属性参考手册</strong></p>
+<p><a href="http://www.w3school.com.cn/tags/index.asp" target="_blank" rel="noopener">完整的 HTML 参考手册</a></p>
+<p>如需更多关于标准属性的信息，请访问：</p>
+<p><a href="http://www.w3school.com.cn/tags/html_ref_standardattributes.asp" target="_blank" rel="noopener">HTML 标准属性参考手册</a></p>
+<h2 id="HTML-标题-1"><a href="#HTML-标题-1" class="headerlink" title="HTML 标题"></a>HTML 标题</h2><h3 id="HTML-标题-2"><a href="#HTML-标题-2" class="headerlink" title="HTML 标题"></a>HTML 标题</h3><p>标题（Heading）是通过 <code>&lt;h1&gt; - &lt;h6&gt;</code> 等标签进行定义的。</p>
+<p><code>&lt;h1&gt;</code> 定义最大的标题。<code>&lt;h6&gt;</code> 定义最小的标题。</p>
+<p><strong>实例</strong></p>
+<pre><code>&lt;h1&gt;This is a heading&lt;/h1&gt;
+&lt;h2&gt;This is a heading&lt;/h2&gt;
+&lt;h3&gt;This is a heading&lt;/h3&gt;
+</code></pre><p><strong>注释：</strong>浏览器会自动地在标题的前后添加空行。</p>
+<p><strong>注释：</strong>默认情况下，HTML 会自动地在块级元素前后添加一个额外的空行，比如段落、标题元素前后。</p>
+<p><strong>标题很重要</strong></p>
+<p>请确保将 HTML heading 标签只用于标题。不要仅仅是为了产生粗体或大号的文本而使用标题。</p>
+<p>搜索引擎使用标题为您的网页的结构和内容编制索引。</p>
+<p>因为用户可以通过标题来快速浏览您的网页，所以用标题来呈现文档结构是很重要的。</p>
+<p>应该将 h1 用作主标题（最重要的），其后是 h2（次重要的），再其次是 h3，以此类推。</p>
+<h3 id="HTML-水平线"><a href="#HTML-水平线" class="headerlink" title="HTML 水平线"></a>HTML 水平线</h3><p><code>&lt;hr /&gt;</code>标签在 HTML 页面中创建水平线。</p>
+<p>hr 元素可用于分隔内容。</p>
+<p><strong>实例</strong></p>
+<pre><code>&lt;p&gt;This is a paragraph&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;This is a paragraph&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;This is a paragraph&lt;/p&gt;
+</code></pre><p><strong>提示：</strong>使用水平线 (<code>&lt;hr&gt;</code> 标签) 来分隔文章中的小节是一个办法（但并不是唯一的办法）。</p>
+<h3 id="HTML-注释"><a href="#HTML-注释" class="headerlink" title="HTML 注释"></a>HTML 注释</h3><p>可以将注释插入 HTML 代码中，这样可以提高其可读性，使代码更易被人理解。浏览器会忽略注释，也不会显示它们。</p>
+<p>注释是这样写的：</p>
+<p><strong>实例</strong></p>
+<pre><code>&lt;!-- This is a comment --&gt;
+</code></pre><p><strong>注释：</strong>开始括号之后（左边的括号）需要紧跟一个叹号，结束括号之前（右边的括号）不需要。</p>
 
       
 
@@ -188,7 +324,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">html</a>
         		</li>
       		
 		</ul>
@@ -244,7 +380,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/07/10/JavaScript/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/07/12/HTML/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -258,18 +394,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/07/16/html基础标签/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/07/14/HTML5浏览器支持/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          html初级
+          HTML5浏览器支持
         
       </div>
     </a>
   
   
-    <a href="/2018/07/09/MarkDown语法/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">MarkDown语法</div>
+    <a href="/2018/07/12/MarkdownPad 2 常见问题/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">MarkdownPad 2 常见问题汇总</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -395,15 +531,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">css</a>
+                <a href="javascript:void(0)" class="js-tag color1">web前端</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">html</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">css</a>
               </li>
             
             <div class="clearfix"></div>

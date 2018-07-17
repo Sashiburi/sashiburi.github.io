@@ -8,20 +8,20 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>css | 朱子静的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="css选择器及优先级">
+  <meta name="description" content="css选择器基础选择器及优先级">
 <meta name="keywords" content="css">
 <meta property="og:type" content="article">
 <meta property="og:title" content="css">
 <meta property="og:url" content="http://yoursite.com/2018/07/16/css/index.html">
 <meta property="og:site_name" content="朱子静的个人博客">
-<meta property="og:description" content="css选择器及优先级">
+<meta property="og:description" content="css选择器基础选择器及优先级">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://i.imgur.com/ZCEk9og.png">
 <meta property="og:image" content="https://i.imgur.com/X0U33TC.png">
-<meta property="og:updated_time" content="2018-07-16T16:06:13.411Z">
+<meta property="og:updated_time" content="2018-07-17T14:21:51.135Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="css">
-<meta name="twitter:description" content="css选择器及优先级">
+<meta name="twitter:description" content="css选择器基础选择器及优先级">
 <meta name="twitter:image" content="https://i.imgur.com/ZCEk9og.png">
   
     <link rel="alternative" href="/atom.xml" title="朱子静的个人博客" type="application/atom+xml">
@@ -174,7 +174,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="css选择器及优先级"><a href="#css选择器及优先级" class="headerlink" title="css选择器及优先级"></a>css选择器及优先级</h3><a id="more"></a>
+        <h2 id="css选择器"><a href="#css选择器" class="headerlink" title="css选择器"></a>css选择器</h2><h3 id="基础选择器及优先级"><a href="#基础选择器及优先级" class="headerlink" title="基础选择器及优先级"></a>基础选择器及优先级</h3><a id="more"></a>
 <p>一般来说，选择器的优先级（从上往下依次降低）是：</p>
 <pre><code>1. 在属性后面使用 !important 会覆盖页面内任何位置定义的元素样式。
 
@@ -194,6 +194,45 @@
 <p>效果：</p>
 <p><img src="https://i.imgur.com/X0U33TC.png" alt=""></p>
 <p>也就是说：<strong>伪类选择器和类选择器的优先级是一样的，谁在后面谁起作用，因为我们知道后面的样式会覆盖前面的样式</strong></p>
+<h3 id="父子选择器-派生选择器"><a href="#父子选择器-派生选择器" class="headerlink" title="父子选择器/派生选择器"></a>父子选择器/派生选择器</h3><pre><code>div span i {}
+</code></pre><p><strong>浏览器遍历父子选择器的顺序：自右向左。</strong></p>
+<h3 id="直接子元素选择器"><a href="#直接子元素选择器" class="headerlink" title="直接子元素选择器"></a>直接子元素选择器</h3><pre><code>div &gt; span {}
+</code></pre><h3 id="并列选择器"><a href="#并列选择器" class="headerlink" title="并列选择器"></a>并列选择器</h3><pre><code>div.wrapper {}
+</code></pre><p><strong>多个条件选择一个元素</strong></p>
+<h3 id="分组选择器"><a href="#分组选择器" class="headerlink" title="分组选择器"></a>分组选择器</h3><pre><code>div,
+p,
+span{}
+</code></pre><h2 id="css权重"><a href="#css权重" class="headerlink" title="css权重"></a>css权重</h2><p>!important: infinity</p>
+<p>行内样式：1000</p>
+<p>id选择器：100</p>
+<p>类选择器、伪类选择器、属性选择器：10</p>
+<p>标签选择器：1</p>
+<p>通配符选择器：0</p>
+<p><strong>进制：256</strong>   </p>
+<h3 id="权重计算"><a href="#权重计算" class="headerlink" title="权重计算"></a>权重计算</h3><p>同一行相加</p>
+<h2 id="定位positon"><a href="#定位positon" class="headerlink" title="定位positon"></a>定位positon</h2><h3 id="绝对定位"><a href="#绝对定位" class="headerlink" title="绝对定位"></a>绝对定位</h3><p>absolute：</p>
+<ol>
+<li><p>脱离原来位置进行定位</p>
+</li>
+<li><p>相对于最近的有定位的父级进行定位，如果没有，则相对于文档进行定位</p>
+</li>
+</ol>
+<h3 id="相对定位"><a href="#相对定位" class="headerlink" title="相对定位"></a>相对定位</h3><p>relative： </p>
+<ol>
+<li><p>保留原来位置进行定位</p>
+</li>
+<li><p>相对于自己原来的位置进行定位</p>
+</li>
+</ol>
+<h3 id="固定定位"><a href="#固定定位" class="headerlink" title="固定定位"></a>固定定位</h3><p>fixed</p>
+<ol>
+<li>生成绝对定位的元素，相对于浏览器窗口进行定位。</li>
+</ol>
+<h2 id="float"><a href="#float" class="headerlink" title="float"></a>float</h2><p>float:left/right</p>
+<ol>
+<li>浮动元素产生了浮动流，所有产生了浮动流的元素，块级元素看不到他们。产生了bfc(block fomat context)的元素，文本类属性(inline)及</li>
+</ol>
+<p>文本都能看到他们。</p>
 
       
 
@@ -276,6 +315,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2018/07/17/JavaScript/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          JavaScript
+        
+      </div>
+    </a>
   
   
     <a href="/2018/07/16/html基础标签/" id="article-nav-older" class="article-nav-link-wrap">
@@ -405,15 +453,23 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">css</a>
+                <a href="javascript:void(0)" class="js-tag color1">web前端</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">html</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">JavaScript</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">css</a>
               </li>
             
             <div class="clearfix"></div>
