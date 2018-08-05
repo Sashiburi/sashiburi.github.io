@@ -171,7 +171,24 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="call、apply及bind的实现"><a href="#call、apply及bind的实现" class="headerlink" title="call、apply及bind的实现"></a>call、apply及bind的实现</h2>
+        <pre><code>var person = {
+    name: &apos;tony&apos;,
+    eat: function () {
+        console.log(this.name + &quot; eat &quot; + this.food);
+    },
+    say: function () {
+        console.log(&apos;i am &apos; + this.name);
+    }
+}
+
+var personAnother = {
+    name: &apos;jack&apos;,
+    food: &apos;apple&apos;,
+    say: function () {
+        console.log(&apos;i am &apos; + this.name);
+    }
+}
+</code></pre>
         
           <a class="article-more-a" href="/2018/08/05/call、apply及bind的实现/#more">more >></a>
         
@@ -234,7 +251,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/27/你不知道的javascript之Object.create和new区别/">css</a>
+      <a class="article-title" href="/2018/07/27/你不知道的javascript之Object.create和new区别/">Object.create 和new的区别</a>
     </h1>
   
 
@@ -247,48 +264,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Object-create-和new"><a href="#Object-create-和new" class="headerlink" title="Object.create 和new"></a>Object.create 和new</h2><p>创建对象的方式，我以我碰到的两种创建方式，Object.create 和new来说明</p>
+        <p>创建对象的方式，我以我碰到的两种创建方式，Object.create 和new来说明</p>
 <pre><code>var Base = function () {}
 var o1 = new Base();
 var o2 = Object.create(Base);
 </code></pre><p>那这样到底有什么不一样呢？ </p>
-<p>我先来一段Object.create的实现方式</p>
-<pre><code>Object.create =  function (o) {
-    var F = function () {};
-    F.prototype = o;
-    return new F();
-};
-</code></pre><p>可以看出来。Object.create是内部定义一个对象，并且让F.prototype对象 赋值为引进的对象/函数 o，并return出一个新的对象。</p>
-<p>再看看var o1 = new Base()的时候new做了什么。</p>
-<pre><code>JavaScript 实际上执行的是：
-var o1 = new Object();
-o1.[[Prototype]] = Base.prototype;
-Base.call(o1);
-</code></pre><p>我们来看看两个对象打印情况。 </p>
-<p><img src="https://i.imgur.com/FcZh9hc.png" alt=""></p>
-<p>看似是一样的。</p>
-<p>我们对原来的代码进行改进一下。</p>
-<pre><code>var Base = function () {
-    this.a = 2
-}
-var o1 = new Base();
-var o2 = Object.create(Base);
-console.log(o1.a);
-console.log(o2.a);
-</code></pre><p><img src="https://i.imgur.com/6FTkBGf.png" alt=""></p>
-<p>可以看到Object.create 失去了原来对象的属性的访问。<br>那再看看prototype呢？（一开始没理解prototype和<strong>proto</strong> 的关系。造成对这两种方式的创建理解非常费解）。<br>再一次对代码进行改进。</p>
-<pre><code>var Base = function () {
-    this.a = 2
-}
-Base.prototype.a = 3;
-var o1 = new Base();
-var o2 = Object.create(Base);
-console.log(o1.a);
-console.log(o2.a);
-</code></pre><p>我一开始以为输出的值是2,3。。。以为prototype还是存在的。。结果发现真的发错特错。我们看运行的结果。 </p>
-<p><img src="https://i.imgur.com/iNBjm7U.png" alt=""></p>
-<p>依旧是如此。</p>
-
+        
+          <a class="article-more-a" href="/2018/07/27/你不知道的javascript之Object.create和new区别/#more">more >></a>
+        
       
 
       
@@ -682,11 +665,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">css</a>
+                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
+                <a href="javascript:void(0)" class="js-tag color4">css</a>
               </li>
             
             <div class="clearfix"></div>

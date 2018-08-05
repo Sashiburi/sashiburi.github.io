@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>call、apply及bind的实现 | 朱子静的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="call、apply及bind的实现">
+  <meta name="description" content="var person = {     name: &amp;apos;tony&amp;apos;,     eat: function () {         console.log(this.name + &amp;quot; eat &amp;quot; + this.food);     },     say: function () {         console.log(&amp;apos;i am &amp;apos; +">
 <meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="call、apply及bind的实现">
 <meta property="og:url" content="http://yoursite.com/2018/08/05/call、apply及bind的实现/index.html">
 <meta property="og:site_name" content="朱子静的个人博客">
-<meta property="og:description" content="call、apply及bind的实现">
+<meta property="og:description" content="var person = {     name: &amp;apos;tony&amp;apos;,     eat: function () {         console.log(this.name + &amp;quot; eat &amp;quot; + this.food);     },     say: function () {         console.log(&amp;apos;i am &amp;apos; +">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-08-05T15:05:01.459Z">
+<meta property="og:updated_time" content="2018-08-05T15:11:58.050Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="call、apply及bind的实现">
-<meta name="twitter:description" content="call、apply及bind的实现">
+<meta name="twitter:description" content="var person = {     name: &amp;apos;tony&amp;apos;,     eat: function () {         console.log(this.name + &amp;quot; eat &amp;quot; + this.food);     },     say: function () {         console.log(&amp;apos;i am &amp;apos; +">
   
     <link rel="alternative" href="/atom.xml" title="朱子静的个人博客" type="application/atom+xml">
   
@@ -171,8 +171,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="call、apply及bind的实现"><a href="#call、apply及bind的实现" class="headerlink" title="call、apply及bind的实现"></a>call、apply及bind的实现</h2><a id="more"></a>
-<pre><code>var person = {
+        <pre><code>var person = {
     name: &apos;tony&apos;,
     eat: function () {
         console.log(this.name + &quot; eat &quot; + this.food);
@@ -189,10 +188,10 @@ var personAnother = {
         console.log(&apos;i am &apos; + this.name);
     }
 }
-</code></pre><h3 id="实现call–改变this指向"><a href="#实现call–改变this指向" class="headerlink" title="实现call–改变this指向"></a>实现call–改变this指向</h3><ol>
-<li>添加函数</li>
-<li>执行函数</li>
-<li><p>删除函数</p>
+</code></pre><a id="more"></a>
+<h3 id="实现call–改变this指向"><a href="#实现call–改变this指向" class="headerlink" title="实现call–改变this指向"></a>实现call–改变this指向</h3><p>1 添加函数</p>
+<p>2 执行函数</p>
+<p>3 删除函数</p>
 <pre><code>Function.prototype.myCall = function (context) {
     var context = Object(context) || window; 当传入的上下文对象为null时,context赋值为window
     context.fn = this; 将当前的函数赋值给上下文对象
@@ -205,12 +204,9 @@ var personAnother = {
     delete context.fn;
     return result
 }
-</code></pre></li>
-</ol>
-<h3 id="实现apply–改变this指向，与call区别：传参列表不同"><a href="#实现apply–改变this指向，与call区别：传参列表不同" class="headerlink" title="实现apply–改变this指向，与call区别：传参列表不同"></a>实现apply–改变this指向，与call区别：传参列表不同</h3><ol>
-<li>添加函数</li>
-<li>执行函数</li>
-<li><p>删除函数</p>
+</code></pre><h3 id="实现apply–改变this指向，与call区别：传参列表不同"><a href="#实现apply–改变this指向，与call区别：传参列表不同" class="headerlink" title="实现apply–改变this指向，与call区别：传参列表不同"></a>实现apply–改变this指向，与call区别：传参列表不同</h3><p>1 添加函数</p>
+<p>2 执行函数</p>
+<p>3 删除函数</p>
 <pre><code>Function.prototype.myApply = function (context, args) {
     var context = Object(context) || window;
     context.fn = this;
@@ -218,11 +214,8 @@ var personAnother = {
     delete context.fn;
     return result;
 }
-</code></pre></li>
-</ol>
-<h3 id="实现bind–返回一个函数-可以传入参数"><a href="#实现bind–返回一个函数-可以传入参数" class="headerlink" title="实现bind–返回一个函数,可以传入参数"></a>实现bind–返回一个函数,可以传入参数</h3><ol>
-<li>bind() 方法会创建一个新函数。当这个新函数被调用时，bind() 的第一个参数将作为它运行时的 this，之后的一序列参数将会在传递的实参前传入作为它的参数。</li>
-<li><p>一个绑定函数也能使用new操作符创建对象：这种行为就像把原函数当成构造器。提供的 this 值被忽略，同时调用时的参数被提供给模拟函数。</p>
+</code></pre><h3 id="实现bind–返回一个函数-可以传入参数"><a href="#实现bind–返回一个函数-可以传入参数" class="headerlink" title="实现bind–返回一个函数,可以传入参数"></a>实现bind–返回一个函数,可以传入参数</h3><p>1 bind() 方法会创建一个新函数。当这个新函数被调用时，bind() 的第一个参数将作为它运行时的 this，之后的一序列参数将会在传递的实参前传入作为它的参数。</p>
+<p>2  一个绑定函数也能使用new操作符创建对象：这种行为就像把原函数当成构造器。提供的 this 值被忽略，同时调用时的参数被提供给模拟函数。</p>
 <pre><code>Function.prototype.myBind = function (context) {
     if (typeof this !== &quot;function&quot;) {
         throw new Error(&quot;Function.prototype.bind - what is trying to be bound is not callable&quot;);
@@ -250,9 +243,7 @@ var newPerson = Person.myBind(person,&apos;Zijing&apos;);
 
 var p1 = new newPerson();
 p1.lastName
-</code></pre></li>
-</ol>
-
+</code></pre>
       
 
       
@@ -337,7 +328,7 @@ p1.lastName
   
   
     <a href="/2018/07/27/你不知道的javascript之Object.create和new区别/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">css</div>
+      <div class="article-nav-title">Object.create 和new的区别</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -475,11 +466,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">css</a>
+                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
+                <a href="javascript:void(0)" class="js-tag color4">css</a>
               </li>
             
             <div class="clearfix"></div>

@@ -6,23 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>css | 朱子静的个人博客</title>
+  <title>Object.create 和new的区别 | 朱子静的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Object.create 和new创建对象的方式，我以我碰到的两种创建方式，Object.create 和new来说明 var Base = function () {} var o1 = new Base(); var o2 = Object.create(Base); 那这样到底有什么不一样呢？  我先来一段Object.create的实现方式 Object.create =  functi">
+  <meta name="description" content="创建对象的方式，我以我碰到的两种创建方式，Object.create 和new来说明 var Base = function () {} var o1 = new Base(); var o2 = Object.create(Base); 那这样到底有什么不一样呢？">
 <meta name="keywords" content="css">
 <meta property="og:type" content="article">
-<meta property="og:title" content="css">
+<meta property="og:title" content="Object.create 和new的区别">
 <meta property="og:url" content="http://yoursite.com/2018/07/27/你不知道的javascript之Object.create和new区别/index.html">
 <meta property="og:site_name" content="朱子静的个人博客">
-<meta property="og:description" content="Object.create 和new创建对象的方式，我以我碰到的两种创建方式，Object.create 和new来说明 var Base = function () {} var o1 = new Base(); var o2 = Object.create(Base); 那这样到底有什么不一样呢？  我先来一段Object.create的实现方式 Object.create =  functi">
+<meta property="og:description" content="创建对象的方式，我以我碰到的两种创建方式，Object.create 和new来说明 var Base = function () {} var o1 = new Base(); var o2 = Object.create(Base); 那这样到底有什么不一样呢？">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://i.imgur.com/FcZh9hc.png">
 <meta property="og:image" content="https://i.imgur.com/6FTkBGf.png">
 <meta property="og:image" content="https://i.imgur.com/iNBjm7U.png">
-<meta property="og:updated_time" content="2018-07-27T10:17:02.492Z">
+<meta property="og:updated_time" content="2018-08-05T15:13:03.818Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="css">
-<meta name="twitter:description" content="Object.create 和new创建对象的方式，我以我碰到的两种创建方式，Object.create 和new来说明 var Base = function () {} var o1 = new Base(); var o2 = Object.create(Base); 那这样到底有什么不一样呢？  我先来一段Object.create的实现方式 Object.create =  functi">
+<meta name="twitter:title" content="Object.create 和new的区别">
+<meta name="twitter:description" content="创建对象的方式，我以我碰到的两种创建方式，Object.create 和new来说明 var Base = function () {} var o1 = new Base(); var o2 = Object.create(Base); 那这样到底有什么不一样呢？">
 <meta name="twitter:image" content="https://i.imgur.com/FcZh9hc.png">
   
     <link rel="alternative" href="/atom.xml" title="朱子静的个人博客" type="application/atom+xml">
@@ -162,7 +162,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      css
+      Object.create 和new的区别
     </h1>
   
 
@@ -175,11 +175,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Object-create-和new"><a href="#Object-create-和new" class="headerlink" title="Object.create 和new"></a>Object.create 和new</h2><p>创建对象的方式，我以我碰到的两种创建方式，Object.create 和new来说明</p>
+        <p>创建对象的方式，我以我碰到的两种创建方式，Object.create 和new来说明</p>
 <pre><code>var Base = function () {}
 var o1 = new Base();
 var o2 = Object.create(Base);
 </code></pre><p>那这样到底有什么不一样呢？ </p>
+<a id="more"></a>
 <p>我先来一段Object.create的实现方式</p>
 <pre><code>Object.create =  function (o) {
     var F = function () {};
@@ -448,11 +449,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">css</a>
+                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
+                <a href="javascript:void(0)" class="js-tag color4">css</a>
               </li>
             
             <div class="clearfix"></div>
