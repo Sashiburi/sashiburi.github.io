@@ -6,18 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: Markdown | 朱子静的个人博客</title>
+  <title>call、apply及bind的实现 | 朱子静的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="记录学习、工作中的日常笔记">
-<meta property="og:type" content="website">
-<meta property="og:title" content="朱子静的个人博客">
-<meta property="og:url" content="http://yoursite.com/tags/Markdown/index.html">
+  <meta name="description" content="call、apply及bind的实现">
+<meta name="keywords" content="JavaScript">
+<meta property="og:type" content="article">
+<meta property="og:title" content="call、apply及bind的实现">
+<meta property="og:url" content="http://yoursite.com/2018/08/05/call、apply及bind的实现/index.html">
 <meta property="og:site_name" content="朱子静的个人博客">
-<meta property="og:description" content="记录学习、工作中的日常笔记">
+<meta property="og:description" content="call、apply及bind的实现">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-08-05T15:05:01.459Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="朱子静的个人博客">
-<meta name="twitter:description" content="记录学习、工作中的日常笔记">
+<meta name="twitter:title" content="call、apply及bind的实现">
+<meta name="twitter:description" content="call、apply及bind的实现">
   
     <link rel="alternative" href="/atom.xml" title="朱子静的个人博客" type="application/atom+xml">
   
@@ -149,98 +151,226 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-call、apply及bind的实现" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/12/MarkdownPad 2 常见问题/" class="archive-article-date">
-  	<time datetime="2018-07-12T03:37:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-12</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/12/MarkdownPad 2 常见问题/">MarkdownPad 2 常见问题汇总</a>
+    <h1 class="article-title" itemprop="name">
+      call、apply及bind的实现
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2018/08/05/call、apply及bind的实现/" class="archive-article-date">
+  	<time datetime="2018-08-05T14:50:14.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-08-05</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="call、apply及bind的实现"><a href="#call、apply及bind的实现" class="headerlink" title="call、apply及bind的实现"></a>call、apply及bind的实现</h2><a id="more"></a>
+<pre><code>var person = {
+    name: &apos;tony&apos;,
+    eat: function () {
+        console.log(this.name + &quot; eat &quot; + this.food);
+    },
+    say: function () {
+        console.log(&apos;i am &apos; + this.name);
+    }
+}
+
+var personAnother = {
+    name: &apos;jack&apos;,
+    food: &apos;apple&apos;,
+    say: function () {
+        console.log(&apos;i am &apos; + this.name);
+    }
+}
+</code></pre><h3 id="实现call–改变this指向"><a href="#实现call–改变this指向" class="headerlink" title="实现call–改变this指向"></a>实现call–改变this指向</h3><ol>
+<li>添加函数</li>
+<li>执行函数</li>
+<li><p>删除函数</p>
+<pre><code>Function.prototype.myCall = function (context) {
+    var context = Object(context) || window; 当传入的上下文对象为null时,context赋值为window
+    context.fn = this; 将当前的函数赋值给上下文对象
+    var args = [],
+        result;
+    for (var i = 1; arguments.length; i++) {
+        args.push(arguments[i]);
+    }
+    result = context.fn(...args);
+    delete context.fn;
+    return result
+}
+</code></pre></li>
+</ol>
+<h3 id="实现apply–改变this指向，与call区别：传参列表不同"><a href="#实现apply–改变this指向，与call区别：传参列表不同" class="headerlink" title="实现apply–改变this指向，与call区别：传参列表不同"></a>实现apply–改变this指向，与call区别：传参列表不同</h3><ol>
+<li>添加函数</li>
+<li>执行函数</li>
+<li><p>删除函数</p>
+<pre><code>Function.prototype.myApply = function (context, args) {
+    var context = Object(context) || window;
+    context.fn = this;
+    var result = context.fn(...args);
+    delete context.fn;
+    return result;
+}
+</code></pre></li>
+</ol>
+<h3 id="实现bind–返回一个函数-可以传入参数"><a href="#实现bind–返回一个函数-可以传入参数" class="headerlink" title="实现bind–返回一个函数,可以传入参数"></a>实现bind–返回一个函数,可以传入参数</h3><ol>
+<li>bind() 方法会创建一个新函数。当这个新函数被调用时，bind() 的第一个参数将作为它运行时的 this，之后的一序列参数将会在传递的实参前传入作为它的参数。</li>
+<li><p>一个绑定函数也能使用new操作符创建对象：这种行为就像把原函数当成构造器。提供的 this 值被忽略，同时调用时的参数被提供给模拟函数。</p>
+<pre><code>Function.prototype.myBind = function (context) {
+    if (typeof this !== &quot;function&quot;) {
+        throw new Error(&quot;Function.prototype.bind - what is trying to be bound is not callable&quot;);
+    }
+    var me = this;
+    var args = [].slice.call(arguments, 1);
+    var Temp = function () {}
+    var F = function () {
+        var _args = [].slice.call(arguments);
+        // 当作为构造函数时，this 指向实例，此时结果为 true，将绑定函数的 this 指向该实例，可以让实例获得来自绑定函数的值
+        // 当作为普通函数时，this 指向 window，此时结果为 false，将绑定函数的 this 指向 context
+        return me.apply(this instanceof Temp ? this : context, args.concat(_args));
+    }
+    // 修改返回函数的 prototype 为绑定函数的 prototype，实例就可以继承绑定函数的原型中的值
+    Temp.prototype = this.prototype;
+    F.prototype = new Temp();
+    return F;
+}
+
+Person.prototype.lastName = &quot;Zhu&quot;;
+function Person(firstName) {
+    this.firstName = firstName;
+}
+var newPerson = Person.myBind(person,&apos;Zijing&apos;);
+
+var p1 = new newPerson();
+p1.lastName
+</code></pre></li>
+</ol>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Markdown</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/08/05/call、apply及bind的实现/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/07/09/MarkDown语法/" class="archive-article-date">
-  	<time datetime="2018-07-09T13:37:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-09</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/07/27/你不知道的javascript之Object.create和new区别/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">css</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/07/09/MarkDown语法/">Markdown语法</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Markdown</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
+
+  
 
 
           </div>
@@ -263,9 +393,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,

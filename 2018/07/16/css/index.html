@@ -18,7 +18,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://i.imgur.com/ZCEk9og.png">
 <meta property="og:image" content="https://i.imgur.com/X0U33TC.png">
-<meta property="og:updated_time" content="2018-07-17T14:21:51.135Z">
+<meta property="og:updated_time" content="2018-07-18T05:22:48.811Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="css">
 <meta name="twitter:description" content="css选择器基础选择器及优先级">
@@ -182,9 +182,9 @@
 
 3. id选择器
 
-4. 类选择器
+4. 类选择器|伪类选择器|属性选择器
 
-5. 标签选择器
+5. 标签选择器|伪元素选择器
 
 6. 通配符选择器
 </code></pre><p>那么究竟是class选择器优先级高，还是伪类选择器优先级高呢？来段代码效果，一目了然：</p>
@@ -205,8 +205,8 @@ span{}
 </code></pre><h2 id="css权重"><a href="#css权重" class="headerlink" title="css权重"></a>css权重</h2><p>!important: infinity</p>
 <p>行内样式：1000</p>
 <p>id选择器：100</p>
-<p>类选择器、伪类选择器、属性选择器：10</p>
-<p>标签选择器：1</p>
+<p>类选择器|伪类选择器|属性选择器：10</p>
+<p>标签选择器|伪元素选择器：1</p>
 <p>通配符选择器：0</p>
 <p><strong>进制：256</strong>   </p>
 <h3 id="权重计算"><a href="#权重计算" class="headerlink" title="权重计算"></a>权重计算</h3><p>同一行相加</p>
@@ -230,9 +230,16 @@ span{}
 </ol>
 <h2 id="float"><a href="#float" class="headerlink" title="float"></a>float</h2><p>float:left/right</p>
 <ol>
-<li>浮动元素产生了浮动流，所有产生了浮动流的元素，块级元素看不到他们。产生了bfc(block fomat context)的元素，文本类属性(inline)及</li>
+<li><p>浮动元素产生了浮动流，所有产生了浮动流的元素，块级元素看不到他们。产生了bfc(block fomat context)的元素，文本类属性(inline)及<br>文本都能看到他们。</p>
+</li>
+<li><p>使用伪元素来清除浮动</p>
+<p> div::after{</p>
+<pre><code>content:&quot;&quot;;
+clear:&quot;both&quot;;
+display:&quot;block&quot;;
+</code></pre><p> }</p>
+</li>
 </ol>
-<p>文本都能看到他们。</p>
 
       
 
@@ -465,11 +472,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
+                <a href="javascript:void(0)" class="js-tag color4">css</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">css</a>
+                <a href="javascript:void(0)" class="js-tag color4">Markdown</a>
               </li>
             
             <div class="clearfix"></div>
